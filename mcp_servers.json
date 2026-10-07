@@ -1,0 +1,26 @@
+{
+  "everything": {
+    "runModes": [
+      {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-everything"],
+        "env": {
+          "DOGFOOD_API_TOKEN": "{{var:api_token}}",
+          "DOGFOOD_OPTIONAL_TOKEN": "{{var:optional_token}}",
+          "DOGFOOD_MODE": "{{var:mode}}",
+          "DOGFOOD_MAX_ITEMS": "{{var:max_items}}",
+          "DOGFOOD_VERBOSE": "{{var:verbose}}",
+          "LOG_LEVEL": "${env:LOG_LEVEL:-info}"
+        }
+      },
+      {
+        "command": "docker",
+        "args": ["run", "-i", "--rm", "-e", "DOGFOOD_API_TOKEN", "-e", "DOGFOOD_MODE", "mcp/everything"],
+        "env": {
+          "DOGFOOD_API_TOKEN": "{{var:api_token}}",
+          "DOGFOOD_MODE": "{{var:mode}}"
+        }
+      }
+    ]
+  }
+}

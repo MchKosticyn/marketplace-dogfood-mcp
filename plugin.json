@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/explyt/plugin-marketplace/main/docs/schema/plugin-manifest.schema.json",
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "name": "Marketplace Dogfood MCP",
+  "description": "A test plugin for dogfooding: one MCP server with two run modes and every kind of plugin variable. The server is the public MCP echo/everything example and holds no data.",
+  "license": "MIT",
+  "variables": {
+    "api_token": {
+      "type": "secret",
+      "label": "API token",
+      "helpText": "Any non-empty string: the echo server does not check it."
+    },
+    "optional_token": {
+      "type": "secret",
+      "label": "Optional token",
+      "required": false,
+      "default": "${env:DOGFOOD_OPTIONAL_TOKEN}",
+      "helpText": "Taken from DOGFOOD_OPTIONAL_TOKEN when set; otherwise asked, may be left empty."
+    },
+    "mode": {
+      "type": "string",
+      "label": "Server mode",
+      "default": "fast",
+      "choices": ["fast", "thorough"]
+    },
+    "max_items": {
+      "type": "number",
+      "label": "Items per answer",
+      "default": "20"
+    },
+    "verbose": {
+      "type": "boolean",
+      "label": "Verbose log",
+      "default": "false"
+    },
+    "greeting": {
+      "type": "string",
+      "label": "Greeting",
+      "required": false,
+      "default": "Hello from the dogfood plugin"
+    }
+  }
+}
