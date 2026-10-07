@@ -6,3 +6,7 @@ and declares every kind of plugin variable: a required secret, an optional secre
 environment variable, a string with choices, a number, a boolean and an optional string. The
 server does nothing with the values; they exist so the agent's install and config flows have
 something to ask for.
+
+## 1.1.0
+
+Adds the `cleanup` skill.

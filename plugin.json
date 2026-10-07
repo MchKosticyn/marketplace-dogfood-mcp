@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/explyt/plugin-marketplace/main/docs/schema/plugin-manifest.schema.json",
   "schemaVersion": 1,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Marketplace Dogfood MCP",
   "description": "A test plugin for dogfooding: one MCP server with two run modes and every kind of plugin variable. The server is the public MCP echo/everything example and holds no data.",
   "license": "MIT",
